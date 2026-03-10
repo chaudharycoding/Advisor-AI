@@ -1,12 +1,12 @@
 # Advisor-AI
 
-## Use Cases
+## Use Cases and Project Overview
 
-AdvisorAI is meant to help students in the Five College Consortium (UMass Amherst, Amherst College, Hampshire College, Mount Holyoke College, and Smith College) better understand their degree progress and plan a path toward graduation. The main idea is that students can interact with the system to analyze their academic requirements and receive guidance about courses and planning decisions.
+AdvisorAI is meant to help students in the Five College Consortium (UMass Amherst, Amherst College, Hampshire College, Mount Holyoke College, and Smith College) better understand their degree progress and help them plan a path toward graduation. The main idea is that students can interact with the system to analyze their academic requirements and receive guidance about courses and planning decisions.
 
 The main user of the system is a **student** who wants help understanding what they still need to graduate.
 
-Some of the core use cases for the system include:
+Some of the use cases for the system include:
 
 - **Student login**  
   Students log into AdvisorAI so they can access advising tools and their academic planning dashboard.
