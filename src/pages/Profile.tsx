@@ -54,6 +54,10 @@ export const Profile: React.FC = () => {
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Class Year</label>
                 <p className="text-sm text-slate-200">{profile.year}</p>
               </div>
+              <div>
+                <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Institution</label>
+                <p className="text-sm text-slate-200">{profile.institution || 'Not set'}</p>
+              </div>
             </div>
           </div>
 

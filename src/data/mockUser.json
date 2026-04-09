@@ -3,6 +3,7 @@
     "id": "u001",
     "name": "Sam Smith",
     "email": "ssmith@university.edu",
+    "institution": "University of Massachusetts Amherst",
     "major": "Computer Science",
     "minor": "Mathematics",
     "year": "Junior",

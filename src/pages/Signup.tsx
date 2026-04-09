@@ -3,11 +3,16 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { Button } from '../components/common/Button'
 import { Card } from '../components/common/Card'
+// START: Feature - Institution and Major Selection
+import { COLLEGES, MAJORS_BY_INSTITUTION } from '../data/degreeRequirements'
+// END: Feature - Institution and Major Selection
 
 export const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [institution, setInstitution] = useState('')
+  const [major, setMajor] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const { signUp } = useAuth()
@@ -27,10 +32,18 @@ export const Signup = () => {
       return
     }
 
+    if (!institution || !major) {
+      setError('Please select your institution and major')
+      return
+    }
+
     setLoading(true)
 
     try {
-      await signUp(email, password)
+      await signUp(email, password, institution, major)
+      // START: Feature - Institution and Major Selection
+      // Profile creation is handled in AuthContext signUp
+      // END: Feature - Institution and Major Selection
       navigate('/dashboard')
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to sign up')
@@ -97,6 +110,50 @@ export const Signup = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="••••••••"
             />
+          </div>
+
+          <div>
+            <label htmlFor="institution" className="block text-sm font-medium text-gray-700 mb-2">
+              Institution
+            </label>
+            <select
+              id="institution"
+              value={institution}
+              onChange={(e) => {
+                setInstitution(e.target.value)
+                setMajor('') // Reset major when institution changes
+              }}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="">Select your institution</option>
+              {COLLEGES.map((inst) => (
+                <option key={inst} value={inst}>
+                  {inst}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="major" className="block text-sm font-medium text-gray-700 mb-2">
+              Major
+            </label>
+            <select
+              id="major"
+              value={major}
+              onChange={(e) => setMajor(e.target.value)}
+              required
+              disabled={!institution}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+            >
+              <option value="">Select your major</option>
+              {institution && MAJORS_BY_INSTITUTION[institution]?.map((maj) => (
+                <option key={maj} value={maj}>
+                  {maj}
+                </option>
+              ))}
+            </select>
           </div>
 
           <Button

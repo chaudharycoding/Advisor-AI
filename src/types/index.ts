@@ -10,6 +10,7 @@ export interface User {
   email: string;
   major: string;
   minor?: string;
+  institution: string;
   year: "Freshman" | "Sophomore" | "Junior" | "Senior";
   expectedGraduation: string;
   gpa: number;
