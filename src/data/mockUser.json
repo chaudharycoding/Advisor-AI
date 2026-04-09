@@ -1,0 +1,449 @@
+{
+  "profile": {
+    "id": "u001",
+    "name": "Sam Smith",
+    "email": "ssmith@university.edu",
+    "major": "Computer Science",
+    "minor": "Mathematics",
+    "year": "Junior",
+    "expectedGraduation": "Spring 2026",
+    "gpa": 3.72,
+    "creditsCompleted": 78,
+    "creditsRequired": 120,
+    "advisor": "Dr. Sarah Chen"
+  },
+  "roadmap": {
+    "semesters": [
+      {
+        "term": "Fall 2023",
+        "year": 2023,
+        "season": "Fall",
+        "totalCredits": 15,
+        "courses": [
+          {
+            "code": "CS 101",
+            "name": "Introduction to Computer Science",
+            "credits": 3,
+            "semester": "Fall 2023",
+            "grade": "A",
+            "status": "completed",
+            "type": "Major",
+            "description": "Foundational course in computer science principles and programming.",
+            "department": "Computer Science"
+          },
+          {
+            "code": "MATH 141",
+            "name": "Calculus I",
+            "credits": 4,
+            "semester": "Fall 2023",
+            "grade": "A-",
+            "status": "completed",
+            "type": "Core",
+            "description": "Differential calculus and applications.",
+            "department": "Mathematics"
+          },
+          {
+            "code": "ENG 101",
+            "name": "College Writing",
+            "credits": 3,
+            "semester": "Fall 2023",
+            "grade": "B+",
+            "status": "completed",
+            "type": "Core",
+            "description": "Academic writing and critical thinking.",
+            "department": "English"
+          },
+          {
+            "code": "HIST 105",
+            "name": "World History",
+            "credits": 3,
+            "semester": "Fall 2023",
+            "grade": "A",
+            "status": "completed",
+            "type": "Elective",
+            "description": "Survey of major world civilizations.",
+            "department": "History"
+          },
+          {
+            "code": "PHYS 211",
+            "name": "Physics I",
+            "credits": 2,
+            "semester": "Fall 2023",
+            "grade": "B",
+            "status": "completed",
+            "type": "Core",
+            "description": "Mechanics and thermodynamics.",
+            "prerequisites": ["MATH 141"],
+            "department": "Physics"
+          }
+        ]
+      },
+      {
+        "term": "Spring 2024",
+        "year": 2024,
+        "season": "Spring",
+        "totalCredits": 16,
+        "courses": [
+          {
+            "code": "CS 201",
+            "name": "Data Structures",
+            "credits": 4,
+            "semester": "Spring 2024",
+            "grade": "A",
+            "status": "completed",
+            "type": "Major",
+            "description": "Fundamental data structures and algorithms.",
+            "prerequisites": ["CS 101"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "MATH 142",
+            "name": "Calculus II",
+            "credits": 4,
+            "semester": "Spring 2024",
+            "grade": "B+",
+            "status": "completed",
+            "type": "Core",
+            "description": "Integral calculus and series.",
+            "prerequisites": ["MATH 141"],
+            "department": "Mathematics"
+          },
+          {
+            "code": "CS 220",
+            "name": "Computer Organization",
+            "credits": 3,
+            "semester": "Spring 2024",
+            "grade": "A-",
+            "status": "completed",
+            "type": "Major",
+            "description": "Computer architecture and assembly language.",
+            "prerequisites": ["CS 101"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "PHIL 101",
+            "name": "Introduction to Philosophy",
+            "credits": 3,
+            "semester": "Spring 2024",
+            "grade": "A",
+            "status": "completed",
+            "type": "Elective",
+            "description": "Major philosophical questions and thinkers.",
+            "department": "Philosophy"
+          },
+          {
+            "code": "PHYS 212",
+            "name": "Physics II",
+            "credits": 2,
+            "semester": "Spring 2024",
+            "grade": "B+",
+            "status": "completed",
+            "type": "Core",
+            "description": "Electricity and magnetism.",
+            "prerequisites": ["PHYS 211"],
+            "department": "Physics"
+          }
+        ]
+      },
+      {
+        "term": "Fall 2024",
+        "year": 2024,
+        "season": "Fall",
+        "totalCredits": 15,
+        "courses": [
+          {
+            "code": "CS 311",
+            "name": "Algorithms",
+            "credits": 3,
+            "semester": "Fall 2024",
+            "grade": "A",
+            "status": "completed",
+            "type": "Major",
+            "description": "Algorithm design and analysis techniques.",
+            "prerequisites": ["CS 201"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "CS 250",
+            "name": "Discrete Mathematics",
+            "credits": 3,
+            "semester": "Fall 2024",
+            "grade": "A-",
+            "status": "completed",
+            "type": "Major",
+            "description": "Logic, set theory, and discrete structures.",
+            "prerequisites": ["CS 101"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "MATH 241",
+            "name": "Linear Algebra",
+            "credits": 3,
+            "semester": "Fall 2024",
+            "grade": "A",
+            "status": "completed",
+            "type": "Minor",
+            "description": "Vector spaces and matrix theory.",
+            "prerequisites": ["MATH 142"],
+            "department": "Mathematics"
+          },
+          {
+            "code": "CS 340",
+            "name": "Database Systems",
+            "credits": 3,
+            "semester": "Fall 2024",
+            "grade": "B+",
+            "status": "completed",
+            "type": "Major",
+            "description": "Database design and SQL.",
+            "prerequisites": ["CS 201"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "ECON 101",
+            "name": "Microeconomics",
+            "credits": 3,
+            "semester": "Fall 2024",
+            "grade": "A-",
+            "status": "completed",
+            "type": "Elective",
+            "description": "Principles of microeconomic theory.",
+            "department": "Economics"
+          }
+        ]
+      },
+      {
+        "term": "Spring 2025",
+        "year": 2025,
+        "season": "Spring",
+        "totalCredits": 16,
+        "courses": [
+          {
+            "code": "CS 370",
+            "name": "Operating Systems",
+            "credits": 4,
+            "semester": "Spring 2025",
+            "status": "in-progress",
+            "type": "Major",
+            "description": "OS concepts, processes, and memory management.",
+            "prerequisites": ["CS 220", "CS 201"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "CS 380",
+            "name": "Software Engineering",
+            "credits": 3,
+            "semester": "Spring 2025",
+            "status": "in-progress",
+            "type": "Major",
+            "description": "Software development methodologies and best practices.",
+            "prerequisites": ["CS 201"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "MATH 347",
+            "name": "Differential Equations",
+            "credits": 3,
+            "semester": "Spring 2025",
+            "status": "in-progress",
+            "type": "Minor",
+            "description": "Ordinary and partial differential equations.",
+            "prerequisites": ["MATH 142", "MATH 241"],
+            "department": "Mathematics"
+          },
+          {
+            "code": "CS 415",
+            "name": "Artificial Intelligence",
+            "credits": 3,
+            "semester": "Spring 2025",
+            "status": "in-progress",
+            "type": "Major",
+            "description": "AI fundamentals and machine learning basics.",
+            "prerequisites": ["CS 311", "MATH 241"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "PSYCH 101",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "semester": "Spring 2025",
+            "status": "in-progress",
+            "type": "Elective",
+            "description": "Fundamental concepts in psychology.",
+            "department": "Psychology"
+          }
+        ]
+      },
+      {
+        "term": "Fall 2025",
+        "year": 2025,
+        "season": "Fall",
+        "totalCredits": 15,
+        "courses": [
+          {
+            "code": "CS 450",
+            "name": "Computer Networks",
+            "credits": 3,
+            "semester": "Fall 2025",
+            "status": "planned",
+            "type": "Major",
+            "description": "Network protocols and internet architecture.",
+            "prerequisites": ["CS 370"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "CS 461",
+            "name": "Machine Learning",
+            "credits": 3,
+            "semester": "Fall 2025",
+            "status": "planned",
+            "type": "Major",
+            "description": "Advanced machine learning algorithms and applications.",
+            "prerequisites": ["CS 415", "MATH 241"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "MATH 451",
+            "name": "Probability Theory",
+            "credits": 3,
+            "semester": "Fall 2025",
+            "status": "planned",
+            "type": "Minor",
+            "description": "Probability distributions and random variables.",
+            "prerequisites": ["MATH 241"],
+            "department": "Mathematics"
+          },
+          {
+            "code": "CS 485",
+            "name": "Cybersecurity",
+            "credits": 3,
+            "semester": "Fall 2025",
+            "status": "planned",
+            "type": "Major",
+            "description": "Security principles and cryptography.",
+            "prerequisites": ["CS 370"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "ART 150",
+            "name": "Digital Design",
+            "credits": 3,
+            "semester": "Fall 2025",
+            "status": "planned",
+            "type": "Elective",
+            "description": "Principles of digital art and design.",
+            "department": "Art"
+          }
+        ]
+      },
+      {
+        "term": "Spring 2026",
+        "year": 2026,
+        "season": "Spring",
+        "totalCredits": 16,
+        "courses": [
+          {
+            "code": "CS 490",
+            "name": "Senior Capstone Project",
+            "credits": 4,
+            "semester": "Spring 2026",
+            "status": "planned",
+            "type": "Major",
+            "description": "Independent software development project.",
+            "prerequisites": ["CS 380"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "CS 475",
+            "name": "Cloud Computing",
+            "credits": 3,
+            "semester": "Spring 2026",
+            "status": "planned",
+            "type": "Major",
+            "description": "Cloud architecture and distributed systems.",
+            "prerequisites": ["CS 450"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "MATH 452",
+            "name": "Mathematical Statistics",
+            "credits": 3,
+            "semester": "Spring 2026",
+            "status": "planned",
+            "type": "Minor",
+            "description": "Statistical inference and hypothesis testing.",
+            "prerequisites": ["MATH 451"],
+            "department": "Mathematics"
+          },
+          {
+            "code": "CS 420",
+            "name": "Computer Graphics",
+            "credits": 3,
+            "semester": "Spring 2026",
+            "status": "planned",
+            "type": "Major",
+            "description": "3D graphics and rendering techniques.",
+            "prerequisites": ["CS 311", "MATH 241"],
+            "department": "Computer Science"
+          },
+          {
+            "code": "BUS 101",
+            "name": "Introduction to Business",
+            "credits": 3,
+            "semester": "Spring 2026",
+            "status": "planned",
+            "type": "Elective",
+            "description": "Business fundamentals and entrepreneurship.",
+            "department": "Business"
+          }
+        ]
+      }
+    ]
+  },
+  "chatHistory": {
+    "messages": [
+      {
+        "id": "msg1",
+        "sender": "user",
+        "content": "Hi! I'm trying to plan my Fall 2025 schedule. What courses should I take?",
+        "timestamp": "2025-03-15T10:30:00Z"
+      },
+      {
+        "id": "msg2",
+        "sender": "ai",
+        "content": "Hello Sam! Based on your roadmap, you're currently planned for CS 450 (Computer Networks), CS 461 (Machine Learning), MATH 451 (Probability Theory), CS 485 (Cybersecurity), and ART 150 (Digital Design) for Fall 2025. This is a strong schedule with 15 credits total. Would you like to discuss any adjustments?",
+        "timestamp": "2025-03-15T10:30:15Z"
+      },
+      {
+        "id": "msg3",
+        "sender": "user",
+        "content": "I'm worried about taking both ML and Cybersecurity in the same semester. Is that too much?",
+        "timestamp": "2025-03-15T10:31:30Z"
+      },
+      {
+        "id": "msg4",
+        "sender": "ai",
+        "content": "That's a valid concern. Both CS 461 (Machine Learning) and CS 485 (Cybersecurity) are rigorous courses. However, they cover different domains - ML focuses on algorithms and statistics, while Cybersecurity emphasizes security principles and cryptography. Since you've maintained a 3.72 GPA and have strong preparation in both algorithms (CS 311) and AI fundamentals (CS 415), you should be able to handle both. Would you like me to suggest an alternative schedule if you want to lighten the load?",
+        "timestamp": "2025-03-15T10:32:00Z"
+      },
+      {
+        "id": "msg5",
+        "sender": "user",
+        "content": "No, I think I'll stick with it. But what about prerequisites - am I ready for all of these?",
+        "timestamp": "2025-03-15T10:33:00Z"
+      },
+      {
+        "id": "msg6",
+        "sender": "ai",
+        "content": "Great question! Let me verify: CS 450 requires CS 370 (you'll complete this semester), CS 461 requires CS 415 and MATH 241 (both satisfied), MATH 451 requires MATH 241 (completed), and CS 485 requires CS 370 (completing now). ART 150 has no prerequisites. You're on track for all of them! Just make sure you pass CS 370 this semester.",
+        "timestamp": "2025-03-15T10:33:30Z"
+      },
+      {
+        "id": "msg7",
+        "sender": "user",
+        "content": "Perfect, thanks! I'll go with this schedule.",
+        "timestamp": "2025-03-15T10:34:00Z"
+      }
+    ]
+  }
+}

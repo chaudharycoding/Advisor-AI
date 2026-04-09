@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #0a1628;
+    color: #f1f5f9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.05) 0%, transparent 50%);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .card {
+    background: linear-gradient(135deg, rgba(15, 29, 53, 0.6), rgba(10, 22, 40, 0.8));
+    border: 1px solid #1a2942;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    border-color: rgba(125, 211, 252, 0.3);
+    box-shadow: 0 0 20px rgba(125, 211, 252, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .btn-primary {
+    background-color: #7dd3fc;
+    color: #0a1628;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary:hover {
+    background-color: #38bdf8;
+    box-shadow: 0 0 20px rgba(125, 211, 252, 0.3);
+  }
+
+  .btn-secondary {
+    background-color: #0f1d35;
+    border: 1px solid #1a2942;
+    color: #f1f5f9;
+  }
+
+  .btn-secondary:hover {
+    background-color: #152642;
+    border-color: rgba(125, 211, 252, 0.5);
+  }
+
+  .stat-card {
+    background-color: rgba(15, 29, 53, 0.4);
+    border: 1px solid rgba(26, 41, 66, 0.5);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    backdrop-filter: blur(12px);
+  }
+
+  .glow-text {
+    color: #7dd3fc;
+    text-shadow: 0 0 20px rgba(125, 211, 252, 0.5);
+  }
+}
