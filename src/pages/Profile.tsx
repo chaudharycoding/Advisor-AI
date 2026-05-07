@@ -1,13 +1,25 @@
 import React from 'react';
 import mockUserData from '../data/mockUser.json';
+import { useProfile } from '../hooks/useProfile';
+import { useAuth } from '../contexts/AuthContext';
 
 export const Profile: React.FC = () => {
-  const { profile, roadmap } = mockUserData;
+  const { profile, loading, error } = useProfile();
+  const { user } = useAuth();
+  const { roadmap } = mockUserData;
 
   // Calculate completed courses
   const allCourses = roadmap.semesters.flatMap(s => s.courses);
   const completedCourses = allCourses.filter(c => c.status === 'completed');
   const inProgressCourses = allCourses.filter(c => c.status === 'in-progress');
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="text-slate-400">Loading profile...</div>
+      </div>
+    );
+  }
 
   // Calculate grade distribution
   const gradeDistribution = completedCourses.reduce((acc, course) => {
@@ -18,12 +30,25 @@ export const Profile: React.FC = () => {
     return acc;
   }, {} as Record<string, number>);
 
+  if (!profile) {
+    return (
+      <div className="flex flex-col gap-2 p-6 text-sm font-mono">
+        <p className="text-slate-400">No profile found.</p>
+      </div>
+    );
+  }
+
+  const creditsCompleted = profile.credits_completed ?? 0;
+  const creditsRequired = profile.credits_required ?? 0;
+  const creditProgress = creditsRequired > 0 ? Math.min((creditsCompleted / creditsRequired) * 100, 100) : 0;
+  const creditsDisplay = profile.credits_required != null ? `${creditsCompleted} / ${creditsRequired}` : '—';
+
   return (
     <div className="max-w-full mx-auto">
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-4xl font-serif mb-3">Academic Profile</h1>
-        <p className="text-slate-400">Complete academic record and degree progress for {profile.name.split(' ')[0]}</p>
+        <p className="text-slate-400">Complete academic record and degree progress for {profile.name?.split(' ')[0] ?? 'you'}</p>
       </div>
 
       {/* Main Grid */}
@@ -36,7 +61,7 @@ export const Profile: React.FC = () => {
             <div className="space-y-4">
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Full Name</label>
-                <p className="text-sm text-slate-200">{profile.name}</p>
+                <p className="text-sm text-slate-200">{profile.name ?? '—'}</p>
               </div>
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Email Address</label>
@@ -44,15 +69,15 @@ export const Profile: React.FC = () => {
               </div>
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Student ID</label>
-                <p className="text-sm text-accent-blue">{profile.id}</p>
+                <p className="text-sm text-accent-blue">{profile.student_id}</p>
               </div>
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Academic Advisor</label>
-                <p className="text-sm text-slate-200">{profile.advisor}</p>
+                <p className="text-sm text-slate-200">{profile.advisor_name ?? '—'}</p>
               </div>
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Class Year</label>
-                <p className="text-sm text-slate-200">{profile.year}</p>
+                <p className="text-sm text-slate-200">{profile.year ?? '—'}</p>
               </div>
             </div>
           </div>
@@ -63,15 +88,15 @@ export const Profile: React.FC = () => {
             <div className="space-y-4">
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Cumulative GPA</label>
-                <p className="text-3xl font-bold glow-text">{profile.gpa.toFixed(2)}</p>
+                <p className="text-3xl font-bold glow-text">{profile.gpa != null ? profile.gpa.toFixed(2) : '—'}</p>
               </div>
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Credits Earned</label>
-                <p className="text-sm text-slate-200 mb-2">{profile.creditsCompleted} / {profile.creditsRequired}</p>
+                <p className="text-sm text-slate-200 mb-2">{creditsDisplay}</p>
                 <div className="bg-dark-bg rounded-full h-2">
                   <div
                     className="bg-gradient-to-r from-accent-blue to-accent-purple h-2 rounded-full"
-                    style={{ width: `${(profile.creditsCompleted / profile.creditsRequired) * 100}%` }}
+                    style={{ width: `${creditProgress}%` }}
                   ></div>
                 </div>
               </div>
@@ -85,7 +110,7 @@ export const Profile: React.FC = () => {
               </div>
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Expected Graduation</label>
-                <p className="text-sm text-slate-200">{profile.expectedGraduation}</p>
+                <p className="text-sm text-slate-200">{profile.expected_graduation ?? '—'}</p>
               </div>
             </div>
           </div>
@@ -99,11 +124,11 @@ export const Profile: React.FC = () => {
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Declared Major</label>
-                <p className="text-lg text-accent-blue font-semibold">{profile.major}</p>
+                <p className="text-lg text-accent-blue font-semibold">{profile.major ?? '—'}</p>
               </div>
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Declared Minor</label>
-                <p className="text-lg text-accent-purple font-semibold">{profile.minor || 'None'}</p>
+                <p className="text-lg text-accent-purple font-semibold">None</p>
               </div>
             </div>
 

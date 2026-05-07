@@ -1,21 +1,21 @@
+export interface User {
+  student_id: number;
+  user_id: string;
+  name: string;
+  email: string | null;
+  major: string | null;
+  year: number | null;
+  advisor_name: string | null;
+  gpa: number | null;
+  credits_completed: number | null;
+  credits_required: number | null;
+  expected_graduation: number | null;
+}
+
 export interface UserData {
   profile: User;
   roadmap: Roadmap;
   chatHistory: ChatHistory;
-}
-
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-  major: string;
-  minor?: string;
-  year: "Freshman" | "Sophomore" | "Junior" | "Senior";
-  expectedGraduation: string;
-  gpa: number;
-  creditsCompleted: number;
-  creditsRequired: number;
-  advisor: string;
 }
 
 export interface Course {
