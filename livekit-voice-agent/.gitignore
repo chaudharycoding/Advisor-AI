@@ -1,0 +1,18 @@
+# dependencies
+node_modules
+
+# env / secrets
+.env
+.env.local
+.env.*
+.env*.local
+.envrc
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# misc
+.DS_Store
+*.log
