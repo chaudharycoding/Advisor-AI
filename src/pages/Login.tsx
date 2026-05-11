@@ -28,70 +28,75 @@ export const Login = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <Card className="w-full max-w-md p-8">
+    <div className="min-h-screen flex items-center justify-center bg-dark-bg px-4">
+      <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">AdvisorAI</h1>
-          <p className="text-gray-600 mt-2">Sign in to your account</p>
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-blue to-accent-purple shadow-glow mb-4">
+            <span className="text-3xl font-bold">A</span>
+          </div>
+          <h1 className="text-3xl font-bold text-slate-100">Welcome Back</h1>
+          <p className="text-slate-400 mt-2">Sign in to your account</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
-              {error}
+        <div className="bg-dark-panel/40 backdrop-blur-xl border border-dark-border/30 rounded-2xl p-8">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {error && (
+              <div className="bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-xl">
+                {error}
+              </div>
+            )}
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                Email (.edu required)
+              </label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full px-4 py-3 bg-dark-bg/60 border border-dark-border/40 rounded-xl text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-accent-blue/50 focus:border-accent-blue/50 transition-all"
+                placeholder="you@university.edu"
+              />
             </div>
-          )}
 
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="you@example.com"
-            />
-          </div>
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-slate-300 mb-2">
+                Password
+              </label>
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="w-full px-4 py-3 bg-dark-bg/60 border border-dark-border/40 rounded-xl text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-accent-blue/50 focus:border-accent-blue/50 transition-all"
+                placeholder="••••••••"
+              />
+            </div>
 
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="••••••••"
-            />
-          </div>
-
-          <Button
-            type="submit"
-            disabled={loading}
-            className="w-full"
-          >
-            {loading ? 'Signing in...' : 'Sign In'}
-          </Button>
-
-          <p className="text-center text-sm text-gray-600">
-            Don't have an account?{' '}
             <button
-              type="button"
-              onClick={() => navigate('/signup')}
-              className="text-blue-600 hover:text-blue-700 font-medium"
+              type="submit"
+              disabled={loading}
+              className="w-full px-4 py-3 bg-gradient-to-r from-accent-blue to-accent-purple text-white font-medium rounded-xl hover:shadow-glow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Sign up
+              {loading ? 'Signing in...' : 'Sign In'}
             </button>
-          </p>
-        </form>
-      </Card>
+
+            <p className="text-center text-sm text-slate-400">
+              Don't have an account?{' '}
+              <button
+                type="button"
+                onClick={() => navigate('/signup')}
+                className="text-accent-blue hover:text-accent-purple font-medium transition-colors"
+              >
+                Sign up
+              </button>
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
