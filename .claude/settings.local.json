@@ -7,9 +7,18 @@
       "Bash(git commit -m \"$(cat <<''EOF''\nAdd Vite/React build configuration\n\nSet up Vite as the new build system replacing Next.js:\n- Add vite.config.ts with React plugin configuration\n- Add index.html as Vite entry point\n- Add PostCSS and Tailwind CSS configuration\n- Update TypeScript configs (tsconfig.json, tsconfig.app.json, tsconfig.node.json)\n- Add Vite environment type definitions\n- Update package.json dependencies (Vite, React, Tailwind CSS, etc.)\n- Add .env.example for environment variable template\nEOF\n)\")",
       "Bash(git commit:*)",
       "WebSearch",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "mcp__supabase__list_projects",
+      "mcp__supabase__apply_migration",
+      "mcp__supabase__list_migrations",
+      "mcp__supabase__execute_sql",
+      "Bash(npm install)"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "supabase"
+  ]
 }
