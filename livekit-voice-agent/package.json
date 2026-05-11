@@ -1,11 +1,12 @@
 {
   "name": "livekit-voice-agent",
   "version": "1.0.0",
-  "description": "Advisor-AI local LiveKit voice worker",
+  "description": "Advisor-AI LiveKit voice worker",
   "type": "module",
   "scripts": {
     "dev": "tsx agent.ts dev",
-    "download-files": "tsx agent.ts download-files"
+    "dev:self": "npm run dev --prefix ..",
+    "postinstall": "node scripts/patch-livekit-agents-inference-llm.cjs"
   },
   "devDependencies": {
     "tsx": "^4.20.6",
@@ -13,7 +14,6 @@
   },
   "dependencies": {
     "@livekit/agents": "~1.0.8",
-    "@livekit/agents-plugin-livekit": "~1.0.8",
     "@livekit/agents-plugin-silero": "~1.0.8",
     "dotenv": "^17.2.3"
   }
