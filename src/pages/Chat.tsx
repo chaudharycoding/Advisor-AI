@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import mockUserData from '../data/mockUser.json';
+import { VoiceAssistantLiveKit } from '../components/livekit/VoiceAssistantLiveKit';
 
 export const Chat: React.FC = () => {
   const { chatHistory, profile } = mockUserData;
@@ -105,21 +106,7 @@ export const Chat: React.FC = () => {
               </div>
             </div>
 
-            {/* Audio Visualizer */}
-            <div className="flex justify-center mb-6">
-              <div className="flex items-center gap-1 h-12">
-                {[...Array(15)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-1 bg-slate-600 rounded-full"
-                    style={{
-                      height: `${Math.random() * 40 + 10}px`,
-                      opacity: 0.3
-                    }}
-                  ></div>
-                ))}
-              </div>
-            </div>
+            <VoiceAssistantLiveKit />
           </div>
         </div>
 
