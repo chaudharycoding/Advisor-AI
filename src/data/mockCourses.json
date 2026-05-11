@@ -1,0 +1,293 @@
+[
+  {
+    "code": "CS 101",
+    "name": "Introduction to Computer Science",
+    "credits": 3,
+    "type": "Major",
+    "description": "Foundational course in computer science principles and programming.",
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 201",
+    "name": "Data Structures",
+    "credits": 4,
+    "type": "Major",
+    "description": "Fundamental data structures and algorithms.",
+    "prerequisites": ["CS 101"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 220",
+    "name": "Computer Organization",
+    "credits": 3,
+    "type": "Major",
+    "description": "Computer architecture and assembly language.",
+    "prerequisites": ["CS 101"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 250",
+    "name": "Discrete Mathematics",
+    "credits": 3,
+    "type": "Major",
+    "description": "Logic, set theory, and discrete structures.",
+    "prerequisites": ["CS 101"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 311",
+    "name": "Algorithms",
+    "credits": 3,
+    "type": "Major",
+    "description": "Algorithm design and analysis techniques.",
+    "prerequisites": ["CS 201"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 340",
+    "name": "Database Systems",
+    "credits": 3,
+    "type": "Major",
+    "description": "Database design and SQL.",
+    "prerequisites": ["CS 201"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 370",
+    "name": "Operating Systems",
+    "credits": 4,
+    "type": "Major",
+    "description": "OS concepts, processes, and memory management.",
+    "prerequisites": ["CS 220", "CS 201"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 380",
+    "name": "Software Engineering",
+    "credits": 3,
+    "type": "Major",
+    "description": "Software development methodologies and best practices.",
+    "prerequisites": ["CS 201"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 415",
+    "name": "Artificial Intelligence",
+    "credits": 3,
+    "type": "Major",
+    "description": "AI fundamentals and machine learning basics.",
+    "prerequisites": ["CS 311", "MATH 241"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 420",
+    "name": "Computer Graphics",
+    "credits": 3,
+    "type": "Major",
+    "description": "3D graphics and rendering techniques.",
+    "prerequisites": ["CS 311", "MATH 241"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 450",
+    "name": "Computer Networks",
+    "credits": 3,
+    "type": "Major",
+    "description": "Network protocols and internet architecture.",
+    "prerequisites": ["CS 370"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 461",
+    "name": "Machine Learning",
+    "credits": 3,
+    "type": "Major",
+    "description": "Advanced machine learning algorithms and applications.",
+    "prerequisites": ["CS 415", "MATH 241"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 475",
+    "name": "Cloud Computing",
+    "credits": 3,
+    "type": "Major",
+    "description": "Cloud architecture and distributed systems.",
+    "prerequisites": ["CS 450"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "CS 485",
+    "name": "Cybersecurity",
+    "credits": 3,
+    "type": "Major",
+    "description": "Security principles and cryptography.",
+    "prerequisites": ["CS 370"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall"]
+  },
+  {
+    "code": "CS 490",
+    "name": "Senior Capstone Project",
+    "credits": 4,
+    "type": "Major",
+    "description": "Independent software development project.",
+    "prerequisites": ["CS 380"],
+    "department": "Computer Science",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "MATH 141",
+    "name": "Calculus I",
+    "credits": 4,
+    "type": "Core",
+    "description": "Differential calculus and applications.",
+    "department": "Mathematics",
+    "availableSemesters": ["Fall", "Spring", "Summer"]
+  },
+  {
+    "code": "MATH 142",
+    "name": "Calculus II",
+    "credits": 4,
+    "type": "Core",
+    "description": "Integral calculus and series.",
+    "prerequisites": ["MATH 141"],
+    "department": "Mathematics",
+    "availableSemesters": ["Fall", "Spring", "Summer"]
+  },
+  {
+    "code": "MATH 241",
+    "name": "Linear Algebra",
+    "credits": 3,
+    "type": "Minor",
+    "description": "Vector spaces and matrix theory.",
+    "prerequisites": ["MATH 142"],
+    "department": "Mathematics",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "MATH 347",
+    "name": "Differential Equations",
+    "credits": 3,
+    "type": "Minor",
+    "description": "Ordinary and partial differential equations.",
+    "prerequisites": ["MATH 142", "MATH 241"],
+    "department": "Mathematics",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "MATH 451",
+    "name": "Probability Theory",
+    "credits": 3,
+    "type": "Minor",
+    "description": "Probability distributions and random variables.",
+    "prerequisites": ["MATH 241"],
+    "department": "Mathematics",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "MATH 452",
+    "name": "Mathematical Statistics",
+    "credits": 3,
+    "type": "Minor",
+    "description": "Statistical inference and hypothesis testing.",
+    "prerequisites": ["MATH 451"],
+    "department": "Mathematics",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "ENG 101",
+    "name": "College Writing",
+    "credits": 3,
+    "type": "Core",
+    "description": "Academic writing and critical thinking.",
+    "department": "English",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "PHYS 211",
+    "name": "Physics I",
+    "credits": 2,
+    "type": "Core",
+    "description": "Mechanics and thermodynamics.",
+    "prerequisites": ["MATH 141"],
+    "department": "Physics",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "PHYS 212",
+    "name": "Physics II",
+    "credits": 2,
+    "type": "Core",
+    "description": "Electricity and magnetism.",
+    "prerequisites": ["PHYS 211"],
+    "department": "Physics",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "HIST 105",
+    "name": "World History",
+    "credits": 3,
+    "type": "Elective",
+    "description": "Survey of major world civilizations.",
+    "department": "History",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "PHIL 101",
+    "name": "Introduction to Philosophy",
+    "credits": 3,
+    "type": "Elective",
+    "description": "Major philosophical questions and thinkers.",
+    "department": "Philosophy",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "ECON 101",
+    "name": "Microeconomics",
+    "credits": 3,
+    "type": "Elective",
+    "description": "Principles of microeconomic theory.",
+    "department": "Economics",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "PSYCH 101",
+    "name": "Introduction to Psychology",
+    "credits": 3,
+    "type": "Elective",
+    "description": "Fundamental concepts in psychology.",
+    "department": "Psychology",
+    "availableSemesters": ["Fall", "Spring", "Summer"]
+  },
+  {
+    "code": "ART 150",
+    "name": "Digital Design",
+    "credits": 3,
+    "type": "Elective",
+    "description": "Principles of digital art and design.",
+    "department": "Art",
+    "availableSemesters": ["Fall", "Spring"]
+  },
+  {
+    "code": "BUS 101",
+    "name": "Introduction to Business",
+    "credits": 3,
+    "type": "Elective",
+    "description": "Business fundamentals and entrepreneurship.",
+    "department": "Business",
+    "availableSemesters": ["Fall", "Spring"]
+  }
+]
