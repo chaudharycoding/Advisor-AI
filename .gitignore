@@ -8,6 +8,9 @@ out
 # vite
 dist
 
+# testing
+coverage
+
 # env
 .env*.local
 
