@@ -21,7 +21,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session }, error }) => {
+      // If there's an error getting the session (e.g., invalid JWT), clear the session
+      if (error) {
+        console.error('Session error:', error)
+        supabase.auth.signOut()
+        setSession(null)
+        setUser(null)
+        setLoading(false)
+        return
+      }
+
       setSession(session)
       setUser(session?.user ?? null)
       setLoading(false)
@@ -30,9 +40,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Listen for auth changes
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-      setUser(session?.user ?? null)
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      // Handle token refresh errors or sign out events
+      if (event === 'TOKEN_REFRESHED' && !session) {
+        console.warn('Token refresh failed, signing out')
+        supabase.auth.signOut()
+      }
+
+      if (event === 'SIGNED_OUT') {
+        setSession(null)
+        setUser(null)
+      } else {
+        setSession(session)
+        setUser(session?.user ?? null)
+      }
+
       setLoading(false)
     })
 
@@ -57,7 +79,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         fullName: `${data.firstName} ${data.lastName}`,
       },
     })
-    if (error) throw error
+
+    // If there's an auth error (e.g., invalid JWT), sign out
+    if (error) {
+      if (error.message?.includes('JWT') || error.message?.includes('token')) {
+        await supabase.auth.signOut()
+      }
+      throw error
+    }
   }
 
   const signOut = async () => {
