@@ -1,8 +1,15 @@
 import React from 'react';
 import mockUserData from '../data/mockUser.json';
+import { useAuth } from '../contexts/AuthContext';
 
 export const Dashboard: React.FC = () => {
+  const { user } = useAuth();
   const { profile } = mockUserData;
+
+  // Get user's name from auth metadata, fallback to mock data
+  const firstName = user?.user_metadata?.firstName || profile.name.split(' ')[0];
+  const fullName = user?.user_metadata?.fullName || profile.name;
+  const firstInitial = firstName.charAt(0).toUpperCase();
 
   const progressPercentage = (profile.creditsCompleted / profile.creditsRequired) * 100;
   const circumference = 2 * Math.PI * 90;
@@ -30,14 +37,14 @@ export const Dashboard: React.FC = () => {
             </svg>
           </button>
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center">
-            <span className="text-sm font-bold">{profile.name.charAt(0)}</span>
+            <span className="text-sm font-bold">{firstInitial}</span>
           </div>
         </div>
       </div>
 
       {/* Welcome Header */}
       <div className="mb-12">
-        <h1 className="text-5xl font-serif mb-4">Welcome back, {profile.name.split(' ')[0]}.</h1>
+        <h1 className="text-5xl font-serif mb-4">Welcome back, {firstName}.</h1>
         <p className="text-slate-400 text-lg">
           Your academic trajectory is currently ascending. AdvisorAI has identified 3 new
           opportunities for research alignment.
