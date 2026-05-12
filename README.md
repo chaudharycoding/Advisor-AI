@@ -31,3 +31,7 @@ Some of the use cases for the system include:
 
 - **Updating plans after academic changes**  
   Students can update their graduation plan if their timeline changes (for example a gap semester, co-op, study away program, or failing/withdrawing from a course).
+
+## Build and deployment
+
+See [BUILD.md](./BUILD.md) for prerequisites, installation, environment variables, and deployment (web app, LiveKit token API, and voice worker).
