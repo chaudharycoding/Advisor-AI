@@ -1,8 +1,15 @@
 import React from 'react';
 import mockUserData from '../data/mockUser.json';
+import { useAuth } from '../contexts/AuthContext';
 
 export const Profile: React.FC = () => {
+  const { user } = useAuth();
   const { profile, roadmap } = mockUserData;
+
+  // Get user's real name and email from auth, fallback to mock data
+  const fullName = user?.user_metadata?.fullName || profile.name;
+  const firstName = user?.user_metadata?.firstName || profile.name.split(' ')[0];
+  const email = user?.email || profile.email;
 
   // Calculate completed courses
   const allCourses = roadmap.semesters.flatMap(s => s.courses);
@@ -23,7 +30,7 @@ export const Profile: React.FC = () => {
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-4xl font-serif mb-3">Academic Profile</h1>
-        <p className="text-slate-400">Complete academic record and degree progress for {profile.name.split(' ')[0]}</p>
+        <p className="text-slate-400">Complete academic record and degree progress for {firstName}</p>
       </div>
 
       {/* Main Grid */}
@@ -36,11 +43,11 @@ export const Profile: React.FC = () => {
             <div className="space-y-4">
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Full Name</label>
-                <p className="text-sm text-slate-200">{profile.name}</p>
+                <p className="text-sm text-slate-200">{fullName}</p>
               </div>
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Email Address</label>
-                <p className="text-sm text-slate-200">{profile.email}</p>
+                <p className="text-sm text-slate-200">{email}</p>
               </div>
               <div>
                 <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Student ID</label>

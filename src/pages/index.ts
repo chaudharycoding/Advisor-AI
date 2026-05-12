@@ -5,3 +5,4 @@ export { Courses } from './Courses';
 export { Profile } from './Profile';
 export { Login } from './Login';
 export { Signup } from './Signup';
+export { Onboarding } from './Onboarding';
